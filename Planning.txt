@@ -1,0 +1,29 @@
+What are my planning to accomplish this project?
+FlowChart
+
+
+[Start]
+   |
+   v
+[Display Main Menu] --> (User Chooses Option)
+   |
+   v
+[Option 1: Add Expense] -> (Ask for details) -> [Save to CSV]
+   |
+   v
+[Option 2: View All Expenses] -> (Read from CSV) -> [Display List]
+   |
+   v
+[Option 3: View Expenses by Category] -> (Filter CSV by category) -> [Display List]
+   |
+   v
+[Option 4: View Total Spending] -> (Sum expenses from CSV) -> [Display Total]
+   |
+   v
+[Option 5: Exit] -> [End]
+
+
+
+Today's Goal - 04/10/2025
+Create an expense_tracker.py
+Work on add expenses.
