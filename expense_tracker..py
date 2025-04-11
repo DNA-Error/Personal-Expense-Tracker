@@ -1,6 +1,8 @@
 
 import  csv
 
+
+
 def add_expense():
     #Asking an input data from user
     date = input("Enter a date (YYYY-MM-DD): ")
@@ -18,6 +20,35 @@ def add_expense():
 
 
 
+def view_expenses():
+    try:
+        with open("expenses.csv", mode="r", newline="") as file:
+            expenses = list(csv.reader(file))
+            if not expenses:
+                print("🚫 No expenses recorded yet. Please add an expense first.")
+                return
+            # For dynamic length
+            max_desc_len = max(len(row[3])for row in expenses)
+            max_line_length = 15+15+15+10+max_desc_len+10
+
+            print("\nAll Expenses:")
+            print(f"{'Date':<15} {'Category':<15} {'Amount($)':<10} {'Description'}")
+            print("-" * max_line_length)
+
+            for row in expenses:
+                date,item_category, amount, description,= row
+                print(f"{date:<15} {item_category:<15} {amount:<10} {description}")
+
+            print("-" * max_line_length)
+            print("\n")
+    except FileNotFoundError:
+        print("Error: Skipping invalid row (missing data")
+    except Exception as e:
+        print(f"❗ An error occurred: {e}")
+
+
+
+
 def guide_user():
     while True:
         print("Welcome to Expense Tracker \n ")
@@ -30,12 +61,14 @@ def guide_user():
 
         if choice == "1":
             add_expense()
+        elif choice == "2":
+            view_expenses()
         elif choice == "5":
             print("Exited Successfully")
             break
         else:
             print("Invalid choice!!")
 
-
+#making guide_user as a default function where it start like main() in C++
 if __name__ == "__main__":
     guide_user()
