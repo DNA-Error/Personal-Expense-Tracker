@@ -64,6 +64,20 @@ def view_by_category():
     except FileNotFoundError:
         print("No expenses recorded yet.")
 
+def total_spending():
+    total = 0.0
+    try:
+        with open("expenses.csv", mode="r", newline="") as file:
+            reader = csv.reader(file)
+            for row in reader:
+                amount = row[2]
+                try:
+                    total += float(amount)
+                except ValueError:
+                    print(f" Skipping invalid amount: {amount}")
+        print(f"\n Total spending: ${total:.2f}\n")
+    except FileNotFoundError:
+        print("No expenses recorded yet. ")
 
 
 
@@ -83,6 +97,8 @@ def guide_user():
             view_expenses()
         elif choice == "3":
             view_by_category()
+        elif choice == "4":
+            total_spending()
         elif choice == "5":
             print("Exited Successfully")
             break
