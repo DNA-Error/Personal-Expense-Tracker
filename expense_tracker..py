@@ -46,6 +46,24 @@ def view_expenses():
     except Exception as e:
         print(f"❗ An error occurred: {e}")
 
+def view_by_category():
+    category_input = input("Enter the category to filter by: ").strip().lower()
+    found = False
+    try:
+        with open("expenses.csv", mode ="r", newline="") as file:
+            reader = csv.reader(file)
+            print(f"\n ---Expenses in Category: {category_input}----")
+            for row in reader:
+                date,item_category,amount, description = row
+                if item_category.strip().lower() == category_input:
+                    print(f"Date:{date}, Amount: {amount}, Description{description}")
+                    found = True
+                if not  found:
+                    print("No expenses found in that category.")
+            print("--------------------------------------------------------\n")
+    except FileNotFoundError:
+        print("No expenses recorded yet.")
+
 
 
 
@@ -63,6 +81,8 @@ def guide_user():
             add_expense()
         elif choice == "2":
             view_expenses()
+        elif choice == "3":
+            view_by_category()
         elif choice == "5":
             print("Exited Successfully")
             break
