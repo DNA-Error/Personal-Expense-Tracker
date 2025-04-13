@@ -113,16 +113,16 @@ def delete_expense():
         for i, row in enumerate(reader):
             print(f"{i+1}.Date:{row[0]}, Category:{row[1]}, Amount: {row[2]}, Description: {row[3]}")
 
-            choice = int(input("Enter the number of the expense to delete:"))
+        choice = int(input("Enter the number of the expense to delete:"))
 
-            if 1<= choice <= len(reader):
+        if 1<= choice <= len(reader):
                 removed = reader.pop(choice-1)
                 print(f"Deleted: {removed}")
 
                 with open("expenses.csv", mode="w", newline="") as file:
                     writer = csv.writer(file)
                     writer.writerows(reader)
-            else:
+        else:
                 print("Invalid Choice.")
     except FileNotFoundError:
         print("No expenses recorded yet.")
@@ -154,7 +154,7 @@ def edit_expense():
                 new_desc = input(f"New Description (current: {old[3]}): ") or old[3]
 
                 reader [choice-1] = [new_date, new_category, new_amount, new_desc]
-                with open("expenses.csv", mode="r", newline="") as file:
+                with open("expenses.csv", mode="w", newline="") as file:
                     writer = csv.writer(file)
                     writer.writerows(reader)
 
