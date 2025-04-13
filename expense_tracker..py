@@ -79,6 +79,96 @@ def total_spending():
     except FileNotFoundError:
         print("No expenses recorded yet. ")
 
+def monthly_report():
+    month_input = input("Enter the month(YYYY-MM): ").strip()
+    total = 0.0
+    found = False
+
+    try:
+        with open("expenses.csv", mode="r", newline="") as file:
+            reader = csv.reader(file)
+            for row in reader:
+                date = row[0]
+                if date.startswith(month_input):
+                    total+= float(row[2])
+                    found = True
+            if found:
+                print(f"\n Total Spending for {month_input}: ${total:.2f}\n")
+            else:
+                print("No expense found for that month.")
+    except FileNotFoundError:
+        print("No expenses recorded yet.")
+    except ValueError:
+        print("There was an error processing the amounts.")
+
+def delete_expense():
+    try:
+        with open("expenses.csv", mode="r", newline="") as file:
+            reader = list(csv.reader(file))
+
+        if not reader:
+            print("No expense to delete.")
+            return
+        print("\nExpenses:")
+        for i, row in enumerate(reader):
+            print(f"{i+1}.Date:{row[0]}, Category:{row[1]}, Amount: {row[2]}, Description: {row[3]}")
+
+            choice = int(input("Enter the number of the expense to delete:"))
+
+            if 1<= choice <= len(reader):
+                removed = reader.pop(choice-1)
+                print(f"Deleted: {removed}")
+
+                with open("expenses.csv", mode="w", newline="") as file:
+                    writer = csv.writer(file)
+                    writer.writerows(reader)
+            else:
+                print("Invalid Choice.")
+    except FileNotFoundError:
+        print("No expenses recorded yet.")
+    except ValueError:
+        print("Please enter a valid number")
+
+def edit_expense():
+    try:
+        with open("expenses.csv", mode="r", newline="") as file:
+            reader = list(csv.reader(file))
+
+            if not  reader:
+                print("No expense to edit")
+                return
+
+            print("\n Expenses: ")
+            for i, row in enumerate(reader):
+                print(f"{i+1}.Date:{row[0]}, Category:{row[1]}, Amount: {row[2]}, Description: {row[3]}")
+
+            choice = int(input("Enter the number of the expense to edit:"))
+
+            if 1 <= choice <= len(reader):
+                old = reader[choice - 1]
+                print("Leave blank to keep the current value:")
+
+                new_date = input(f"New Date (current: {old[0]}): ") or old[0]
+                new_category = input(f"New Category (current: {old[1]}): ") or old[1]
+                new_amount = input(f"New Amount (current: {old[2]}): ") or old[2]
+                new_desc = input(f"New Description (current: {old[3]}): ") or old[3]
+
+                reader [choice-1] = [new_date, new_category, new_amount, new_desc]
+                with open("expenses.csv", mode="r", newline="") as file:
+                    writer = csv.writer(file)
+                    writer.writerows(reader)
+
+                print("Expense updated successfully")
+
+            else:
+                print("Invalid choice.")
+
+    except FileNotFoundError:
+        print("No expenses recorded yet.")
+    except ValueError:
+        print("Please enter a Valid Number.")
+
+
 
 
 def guide_user():
@@ -88,7 +178,8 @@ def guide_user():
         print("2.View all Expenses")
         print("3.View expense by category")
         print("4.View Total Spending")
-        print("5.Quit")
+        print("5.Modify Existing Data")
+        print("6.Quit")
         choice = input("Choose an Option:")
 
         if choice == "1":
@@ -98,8 +189,27 @@ def guide_user():
         elif choice == "3":
             view_by_category()
         elif choice == "4":
-            total_spending()
+            print("\n Total Spending Options:")
+            print("1. Total Report")
+            print("2. Monthly Report")
+            sub_choice = input("Choose an Option:")
+            if sub_choice == "1":
+                total_spending()
+            elif sub_choice == "2":
+                monthly_report()
+
         elif choice == "5":
+            print("\nModify Expense Options:")
+            print("1. Delete an Expense")
+            print("2. Edit an Expense")
+            modify_choice = input("Choose an Option")
+            if modify_choice == "1":
+                delete_expense()
+            elif modify_choice =="2":
+                edit_expense()
+            else:
+                print("Invalid Option")
+        elif choice == "6":
             print("Exited Successfully")
             break
         else:

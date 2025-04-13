@@ -27,3 +27,17 @@ FlowChart
 Today's Goal - 04/10/2025
 Create an expense_tracker.py
 Work on add expenses.
+
+04/12/2025
+New Idea
+On the option
+Total Spending
+    let user choose to
+        1.Total Reports
+        2.Monthly Reports
+
+    and there should be another option
+Like made a change on existing Data
+    then let user to chose
+        1.Delete an Expense
+        2.Edit an Expense
