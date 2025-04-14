@@ -1,3 +1,100 @@
-2025-04-10,food,25.80,"It is beans, rice, tomato,and onion"
-2025-04-11,food,24.40,for apple and beer
-2025-04-11,transport,8.99,Uber ride
+// ...existing data...
+2025-02-22,food,12.50,breakfast
+2025-02-23,transport,5.00,train ticket
+2025-02-24,entertainment,30.00,concert ticket
+2025-02-25,groceries,60.00,weekly shopping
+2025-02-26,health,15.00,vitamins
+2025-02-27,utilities,100.00,water bill
+2025-02-28,shopping,75.00,clothing
+2025-03-01,food,20.00,dinner
+2025-03-02,transport,3.00,bus ride
+2025-03-03,education,40.00,book purchase
+2025-03-04,entertainment,25.00,streaming subscription
+2025-03-05,groceries,50.00,weekly shopping
+2025-03-06,health,10.00,pharmacy
+2025-03-07,utilities,150.00,gas bill
+2025-03-08,shopping,200.00,electronics
+2025-03-09,food,18.00,lunch
+2025-03-10,transport,4.50,taxi ride
+2025-03-11,education,30.00,online course
+2025-03-12,entertainment,15.00,video game
+2025-03-13,groceries,55.00,weekly shopping
+2025-03-14,health,20.00,doctor visit
+2025-03-15,utilities,120.00,electricity bill
+2025-03-16,shopping,50.00,home decor
+2025-03-17,food,10.00,coffee
+2025-03-18,transport,6.00,train ticket
+2025-03-19,education,25.00,workshop
+2025-03-20,entertainment,40.00,concert
+2025-03-21,groceries,65.00,weekly shopping
+2025-03-22,health,30.00,pharmacy
+2025-03-23,utilities,90.00,internet bill
+2025-03-24,shopping,120.00,shoes
+2025-03-25,food,15.00,lunch
+2025-03-26,transport,2.50,bus ride
+2025-03-27,education,35.00,course materials
+2025-03-28,entertainment,50.00,movie night
+2025-03-29,groceries,70.00,weekly shopping
+2025-03-30,health,25.00,pharmacy
+2025-03-31,utilities,110.00,water bill
+2025-04-01,shopping,80.00,clothing
+2025-04-02,food,12.00,breakfast
+2025-04-03,transport,5.50,taxi ride
+2025-04-04,education,45.00,online course
+2025-04-05,entertainment,20.00,streaming subscription
+2025-04-06,groceries,60.00,weekly shopping
+2025-04-07,health,15.00,pharmacy
+2025-04-08,utilities,130.00,electricity bill
+2025-04-09,shopping,100.00,accessories
+2025-04-10,food,18.00,dinner
+2025-04-11,transport,3.50,bus ride
+2025-04-12,education,50.00,workshop
+2025-04-13,entertainment,35.00,concert ticket
+2025-04-14,groceries,55.00,weekly shopping
+2025-04-15,health,10.00,pharmacy
+2025-04-16,utilities,140.00,gas bill
+2025-04-17,shopping,150.00,electronics
+2025-04-18,food,20.00,lunch
+2025-04-19,transport,4.00,train ticket
+2025-04-20,education,30.00,online course
+2025-04-21,entertainment,25.00,video game
+2025-04-22,groceries,65.00,weekly shopping
+2025-04-23,health,20.00,doctor visit
+2025-04-24,utilities,100.00,internet bill
+2025-04-25,shopping,90.00,home decor
+2025-04-26,food,15.00,coffee
+2025-04-27,transport,6.50,taxi ride
+2025-04-28,education,40.00,course materials
+2025-04-29,entertainment,30.00,movie night
+2025-04-30,groceries,70.00,weekly shopping
+2025-05-01,health,25.00,pharmacy
+2025-05-02,utilities,120.00,water bill
+2025-05-03,shopping,110.00,clothing
+2025-05-04,food,12.50,breakfast
+2025-05-05,transport,5.00,train ticket
+2025-05-06,education,35.00,workshop
+2025-05-07,entertainment,40.00,concert
+2025-05-08,groceries,60.00,weekly shopping
+2025-05-09,health,15.00,pharmacy
+2025-05-10,utilities,150.00,electricity bill
+2025-05-11,shopping,200.00,electronics
+2025-05-12,food,18.00,lunch
+2025-05-13,transport,4.50,taxi ride
+2025-05-14,education,30.00,online course
+2025-05-15,entertainment,15.00,video game
+2025-05-16,groceries,55.00,weekly shopping
+2025-05-17,health,20.00,doctor visit
+2025-05-18,utilities,90.00,internet bill
+2025-05-19,shopping,120.00,shoes
+2025-05-20,food,15.00,lunch
+2025-05-21,transport,2.50,bus ride
+2025-05-22,education,35.00,course materials
+2025-05-23,entertainment,50.00,movie night
+2025-05-24,groceries,70.00,weekly shopping
+2025-05-25,health,25.00,pharmacy
+2025-05-26,utilities,110.00,water bill
+2025-05-27,shopping,80.00,clothing
+2025-05-28,food,12.00,breakfast
+2025-05-29,transport,5.50,taxi ride
+2025-05-30,education,45.00,online course
+2025-05-31,entertainment,20.00,streaming subscription
