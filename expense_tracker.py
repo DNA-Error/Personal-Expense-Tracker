@@ -15,7 +15,7 @@ def add_expense():
         writer.writerow([date, item_category, amount, description])
 
     print("Expense added successfully.")
-
+# i understand about csv file and this above function
 def view_expenses():
     try:
         with open("expenses.csv", mode="r", newline="") as file:
