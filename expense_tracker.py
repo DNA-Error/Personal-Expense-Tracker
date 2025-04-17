@@ -15,7 +15,7 @@ def add_expense():
         writer.writerow([date, item_category, amount, description])
 
     print("Expense added successfully.")
-# i understand about csv file and this above function
+
 def view_expenses():
     try:
         with open("expenses.csv", mode="r", newline="") as file:
@@ -185,8 +185,10 @@ def edit_expense():
 
 def guide_user():
     while True:
-        print("Welcome to Expense Tracker\n")
-        print("1. Add an Expense")
+        print("\n" + "="*50)
+        print("Welcome to Expense Tracker")
+        print("="*50)
+        print("\n1. Add an Expense")
         print("2. View all Expenses")
         print("3. View expense by category")
         print("4. View Total Spending")
